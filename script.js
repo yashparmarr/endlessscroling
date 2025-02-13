@@ -1,5 +1,4 @@
 let imageContainer = document.querySelector(".image-container");
-// let isFetching = false;
 
 let getPhotos = async () => {
   try {
@@ -28,12 +27,11 @@ let createDom = (getPhotos) => {
 
 window.addEventListener("scroll", () => {
      let scrolled = window.innerHeight + window.scrollY;
-     let totalHeight = document.body.offsetHeight;
-     if (scrolled >= totalHeight - 200) {
+     let totalHeight = document.body.offsetHeight-10;
+     if (scrolled >= totalHeight) {
          console.log("Fetching more photos...");
          getPhotos();
      }
 });
 
 getPhotos();
-
